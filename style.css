@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
 *{
     margin: 0;
@@ -12,20 +12,96 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #000;
+    
+}
+.mobile{
+    display: none;
 }
 .content {
     position: relative;
 }
 .content h2 {
     position: absolute;
-    
     transform: translate(-50%, -50%);
     font-size: 8em;
     text-transform: uppercase; 
     white-space: nowrap;
+    letter-spacing: -4px;
 }
 .content h2:nth-child(1) {
     color: transparent;
-    -webkit-text-stroke: 2px #03a9f4;
+    -webkit-text-stroke: 1px #00468b;
+}
+.content h2:nth-child(2) {
+    color: #00468b;
+    animation: animate 4s ease-in-out infinite;
+} 
+
+@keyframes animate {
+    0%,100%{
+   clip-path: polygon(0 45%, 12% 41%, 26% 41%, 36% 49%, 
+   45% 58%, 53% 63%, 65% 63%, 77% 60%, 90% 54%, 100% 50%, 
+   100% 100%, 0% 100%);
+    }
+    50%{
+        clip-path: polygon(0 52%, 12% 58%, 23% 63%, 37% 65%, 
+        46% 62%, 55% 58%, 62% 51%, 74% 44%, 86% 43%, 100% 46%, 
+        100% 100%, 0% 100%);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .content{
+        display: none;
+    }
+    .mobile{
+        display: flex;
+    }
+    .blue-text{
+        color: transparent;
+        -webkit-text-stroke: 1px #00468b;
+        margin-top: -110px;
+        letter-spacing: -8px;
+    }
+    .blue-text p{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        font-size: 8em;
+        text-transform: uppercase; 
+        white-space: nowrap;
+    }
+    .ship-text{
+        color: #00468b;
+        margin-top: 85px;
+    }
+    .ship-text p{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        font-size: 3.8em;
+        text-transform: uppercase; 
+        white-space: nowrap;
+    }
+    .content h2 {
+        letter-spacing: -8px;
+    }
+    .content h2::first-letter {
+        letter-spacing: -20px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .blue-text p{
+        font-size: 6em;
+        margin-top: 25px;
+        letter-spacing: -4px;
+    }
+    .content h2 {
+        font-size: 6em;
+        letter-spacing: -2px;
+    }
+    .ship-text p{
+        font-size: 3em;
+        margin-top: -20px;
+        letter-spacing: -1px;
+    }
 }
